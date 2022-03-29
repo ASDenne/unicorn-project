@@ -1,16 +1,25 @@
-show_instructions = ""
-while show_instructions != "x":
-    # ask the user if they have played before
-    show_instructions = input("have you played before? :").lower()
-    # if they say output program countiues
-    if show_instructions == "yes" or show_instructions == "y":
-        print("program countinues")
+#functions
+def yes_no(question_text):
+    while True:
+        Answer = input(question_text).lower()
+        # if they say output program countiues
+        if Answer == "yes" or Answer == "y":
+            Answer = "Yes"
+            return Answer
+    
+        #if they say no output desplay instructions
+        elif Answer == "no" or Answer == "n":
+            Answer = "No"
+            return Answer
+    
+        #otherwie show error
+        else:
+            print('please answer "yes" or "no"')
+        print(f"you entered {Answer}")
 
-    #if they say no output desplay instructions
-    elif show_instructions == "no" or show_instructions == "n":
-        print("display instructions")
 
-    #otherwie show error
-    else:
-        print('please answer "yes" or "no"')
-    print(f"you entered {show_instructions}")
+#mainroutine
+show_instructions = yes_no("have you played before? :")
+print(f"you entered {show_instructions}")
+fun = yes_no("Are you having Fun")
+print(f"you entered {fun}")
